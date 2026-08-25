@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+env/
+
+# Django
+*.sqlite3
+backend/staticfiles/
+backend/media/
+.env
+
+# Frontend
+node_modules/
+admin-web/dist/
+admin-web/*.log
+miniapp/unpackage/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE / OS
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,38 @@
+Emall 测试账号
+
+1. 管理后台管理员
+用户名: demo_admin
+密码: demoAdmin123456
+用途: Django Admin、Vue Element Plus 管理后台、需要管理员权限的 Mock API
+
+2. 小程序测试买家
+用户名: demo_buyer
+密码: demo123456
+用途: 微信小程序普通用户登录、下单、购物车、钱包、实名等业务测试
+
+3. 分销/团队/代理测试账号
+统一密码: demo123456
+
+用户名: dist_demo_leader
+用途: 团队长，查看团队人数、团队业绩、一级/二级佣金、奖励池收入
+
+用户名: dist_demo_direct_1
+用途: 团队长的直推分销商，同时拥有下级 dist_demo_indirect_1
+
+用户名: dist_demo_indirect_1
+用途: dist_demo_direct_1 的下级，用于测试二级佣金
+
+用户名: dist_demo_direct_2
+用途: 团队长的另一个直推用户，用于测试一级佣金和团队人数
+
+用户名: dist_demo_agent
+用途: 城市代理测试账号，代理区域为杭州市，区域编码 330100
+
+说明:
+- 当前账号由 backend/apps/core/management/commands/seed_initial_data.py 初始化。
+- 如切换新数据库后账号不存在，可重新执行:
+  .\.venv\Scripts\python.exe backend\manage.py seed_initial_data
+- 分销/团队/代理测试数据由以下命令初始化:
+  .\.venv\Scripts\python.exe backend\manage.py seed_distribution_demo --settle --reward
+- 分销/团队/代理测试结果由以下命令检查:
+  .\.venv\Scripts\python.exe backend\manage.py check_distribution_demo

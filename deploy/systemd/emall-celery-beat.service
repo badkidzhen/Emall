@@ -1,0 +1,17 @@
+[Unit]
+Description=Emall Celery Beat
+After=network.target redis-server.service mysql.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/emall/backend
+EnvironmentFile=/opt/emall/.env
+StateDirectory=emall
+ExecStart=/opt/emall/.venv/bin/celery -A config beat --loglevel=INFO --schedule=/var/lib/emall/celerybeat-schedule
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,27 @@
+Emall 全量测试数据说明
+
+生成命令：
+.\.venv\Scripts\python.exe backend\manage.py seed_full_test_data
+
+可选参数：
+.\.venv\Scripts\python.exe backend\manage.py seed_full_test_data --users 60 --products 36 --orders 120
+
+默认测试账号：
+test_admin / test123456
+test_leader_001 / test123456
+test_agent_001 / test123456
+test_buyer_001 / test123456
+
+数据标识：
+测试用户名以 test_ 开头。
+测试订单号以 TESTORDER 开头。
+测试支付单号以 TESTPAY 开头。
+测试退款单号以 TESTRF 开头。
+测试商品、分类、活动、奖金池名称包含“测试”字样。
+
+默认覆盖模块：
+用户、会员等级、实名认证状态、分销关系、团队统计、商品分类、商品、SKU、库存、购物车、订单、支付记录、物流、售后退款、发票、优惠券、团购、秒杀、活动购买记录、佣金、钱包、资金流水、提现、城市代理申请、城市代理、奖金池、奖金池规则、奖金池分配记录。
+
+注意：
+该命令面向开发库/测试库使用，不建议在正式生产库执行。
+命令按固定前缀尽量幂等生成数据，可重复执行用于补齐测试数据。

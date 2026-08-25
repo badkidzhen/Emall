@@ -1,0 +1,18 @@
+[Unit]
+Description=Emall Django API
+After=network.target mysql.service redis-server.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/emall
+EnvironmentFile=/opt/emall/.env
+RuntimeDirectory=emall
+ExecStart=/opt/emall/.venv/bin/gunicorn config.wsgi:application --chdir /opt/emall/backend --bind unix:/run/emall/gunicorn.sock --workers 3 --timeout 60 --access-logfile - --error-logfile -
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

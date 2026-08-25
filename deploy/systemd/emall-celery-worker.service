@@ -1,0 +1,16 @@
+[Unit]
+Description=Emall Celery Worker
+After=network.target redis-server.service mysql.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/emall/backend
+EnvironmentFile=/opt/emall/.env
+ExecStart=/opt/emall/.venv/bin/celery -A config worker --loglevel=INFO --concurrency=2
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

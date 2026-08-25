@@ -1,0 +1,10 @@
+{
+  "name": "emall-miniapp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "UniApp WeChat mini program for Emall.",
+  "scripts": {
+    "note": "Use HBuilderX to run this UniApp project, or add Vue CLI/Vite toolchain later."
+  }
+}
+

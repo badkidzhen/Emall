@@ -1,0 +1,18 @@
+{
+    "name" : "Emall分销商城",
+    "appid" : "",
+    "description" : "分销商城微信小程序",
+    "versionName" : "0.1.0",
+    "versionCode" : "100",
+    "transformPx" : false,
+    "mp-weixin" : {
+        "appid" : "wxb22ca6e0ba4a53d3",
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        },
+        "usingComponents" : true
+    }
+}
